@@ -1,0 +1,25 @@
+body{
+    background-color: wheat;
+}
+.table_game{
+    background-color: wheat;
+    width: 600px;
+    height: 400px;
+    margin-left: 410px;
+}
+.card{
+    background-color: rgb(177, 172, 172);
+    
+    margin: 15px;
+    height: 50px;
+    width: 50px;
+    border: 1px aqua solid;
+    border-radius: 3px;
+    display: inline-block;
+    color: red;
+    
+}
+.card:hover{
+    cursor: pointer;
+    background-color: aqua;
+}
