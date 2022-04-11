@@ -6,7 +6,7 @@ function double_cards(){
 
     for(i in cards){
         newCards.push(cards[i])
-        newCards.push(cards[i])
+        newCards.push(cards[i].toLowerCase())
     }
     return newCards;
 }
