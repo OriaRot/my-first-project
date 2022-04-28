@@ -1,25 +1,52 @@
 body{
-    background-color: wheat;
+    background-color: #c74224;
+    font-family: 'Oswald', sans-serif;
 }
-.table_game{
-    background-color: wheat;
-    width: 600px;
-    height: 400px;
-    margin-left: 410px;
+.board{
+    background-color: #c74224;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(13,100px);
+    /* margin-left: 410px; */
+}
+h1{
+    color: #a69137;
+    border: 2px;
+    border-radius: 10px;
+    font-style: italic;
+    font-size: xx-large;
 }
 .card{
     background-color: rgb(177, 172, 172);
-    
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 15px;
-    height: 50px;
-    width: 50px;
-    border: 1px aqua solid;
-    border-radius: 3px;
-    display: inline-block;
-    color: red;
-    
+    height: 112.5px;
+    width: 75px;
+    border: 2px whitesmoke solid;
+    border-radius: 10px;
+    /* display: inline-flex; */
+    /* flex: 40px; */
+    color: #1500ff;
 }
 .card:hover{
     cursor: pointer;
-    background-color: aqua;
+    background-color: #529c7d;
+}
+.hidden{
+    content-visibility: hidden;
+}
+.go-away{
+    content-visibility: hidden;
+}
+
+.player-name{
+    color: #faf0be;
+    text-align: center;
+}
+.active{
+    color: blue;
 }
