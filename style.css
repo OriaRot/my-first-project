@@ -1,9 +1,9 @@
 body{
-    background-color: #c74224;
+    background-color: #143F6B;
     font-family: 'Oswald', sans-serif;
 }
 .board{
-    background-color: #c74224;
+    background-color: #143F6B;
     width: 100%;
     height: 100%;
     display: grid;
@@ -33,7 +33,7 @@ h1{
     color: #1500ff;
 }
 .card:hover{
-    box-shadow: 0 15px 15px 15px #813732;
+    box-shadow: 0 5px 15px 5px black;
     cursor: pointer;
     background-color: #529c7d;
 }
@@ -43,18 +43,20 @@ h1{
 .hidden{
     content-visibility: hidden;
     background-size: 90px;
-
 }
 .go-away{
     content-visibility: hidden;
 }
 
 .player-name{
-    color: #faf0be;
-    text-align: center;
+    color: #F55353;
+   text-align: center;
+   display: inline;
+   font-size: 1.4rem;
+   margin-left: 400px;
 }
 .active{
-    color: blue;
+    color: #FEB139;
 }
 
 .before{
@@ -63,21 +65,30 @@ h1{
 }
 
 .ipt{
-    border-radius: 4px;
+    background-color: #F55353;
+    background-size: 20px;
+    color: #F6F54D;
+    width: 15%;
+    font-size: 2rem;
+    border: 5px;
+    border-radius: 5px;
+    box-shadow: 0 3px 3px #26243b;
 }
 
 .btn{
-    background-image: url(https://bit.ly/3MSr2p0);
+    background-color: #F55353;
     background-size: 20px;
     cursor: pointer;
-    color: blue;
-    width: 5%;
+    color: #F6F54D;
+    width: 10%;
     font-size: 2rem;
     margin-top: 70px;
     border: 5px;
     border-radius: 5px;
     box-shadow: 0 3px 3px #26243b;
     text-align: center;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-family: 'Oswald', sans-serif;
 }
 
 .btn:hover{
