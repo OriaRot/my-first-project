@@ -33,11 +33,17 @@ h1{
     color: #1500ff;
 }
 .card:hover{
+    box-shadow: 0 15px 15px 15px #813732;
     cursor: pointer;
     background-color: #529c7d;
 }
+.img{
+    background-image: url(https://bit.ly/3wqZgtd);
+}
 .hidden{
     content-visibility: hidden;
+    background-size: 90px;
+
 }
 .go-away{
     content-visibility: hidden;
@@ -49,4 +55,31 @@ h1{
 }
 .active{
     color: blue;
+}
+
+.before{
+    color: #0e9aa7;
+    font-size: 1.3rem;
+}
+
+.ipt{
+    border-radius: 4px;
+}
+
+.btn{
+    background-image: url(https://bit.ly/3MSr2p0);
+    background-size: 20px;
+    cursor: pointer;
+    color: blue;
+    width: 5%;
+    font-size: 2rem;
+    margin-top: 70px;
+    border: 5px;
+    border-radius: 5px;
+    box-shadow: 0 3px 3px #26243b;
+    text-align: center;
+}
+
+.btn:hover{
+    box-shadow: 0 10px 10px #26243b;
 }

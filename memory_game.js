@@ -91,10 +91,9 @@ function createBoard (){
         let elem = document.createElement('div')
         elem.innerText = item.card
         board.appendChild(elem)
-        elem.className = `card ${item.id} hidden`
+        elem.className = `card ${item.id} hidden img`
         elem.id = item.id
         elem.onclick =  click
-       
     })}
 
 
@@ -104,7 +103,7 @@ function click(e){
     temp.push(e.target.id)
     let firstCard = document.getElementsByClassName(temp[0])
     if(temp.length>1){
-        // for (i = 0; i<cards.length;i+=2){
+
     if(temp[0]==temp[1]){
         if(firstOrSecond == 'f'){
             cnt+=10
@@ -116,9 +115,11 @@ function click(e){
         }
       setTimeout(()=>{  e.target.classList.remove('card')
         e.target.classList.add("hidden")
+        e.target.classList.remove("img")
         for (i of firstCard){
             i.classList.remove('card')
             i.classList.add("hidden")
+            i.classList.remove("img")
         }},1000)
 
         temp = []
