@@ -30,14 +30,16 @@ const audioFiles = [new Audio('A.mp3'),
                     new Audio('X.mp3'),
                     new Audio('Y.mp3'),
                     new Audio('Z.mp3'),]
-
+const claps = new Audio('claps.mp3');
 let cnt = 0;
 let cnt2 = 0;
 let temp = [];
 let element;
 let elem;
 let elem1;
-let firstOrSecond = 'f'
+let arrow = '⬅️';
+let finish;
+let firstOrSecond = 'f';
 function createCards(card,id){
 return {
     card,
@@ -132,28 +134,18 @@ function click(e){
     let firstCard = document.getElementsByClassName(temp[0])
     if(temp.length>1){
     
-
     if(temp[0]==temp[1]){
         if(firstOrSecond == 'f'){
             cnt+=10
+            finish+=1
             elem.innerText = `${player.value}:${cnt}`
-            // for (i in audioFiles){
-            //     if(audioFiles[i].includes(e.target.innerText)){
-            //         audioFiles[i].play()
-            //     }
-                
-            // }
+            claps.play()
         }
         else{
             cnt2+=10
+            finish+=1
             elem1.innerText = `${player1.value}:${cnt2}`
-            audioFiles[1].play()
-            // for (i in audioFiles){
-            //     if(audioFiles[i].includes(e.target.innerText)){
-            //         audioFiles[i].play()
-            //     }
-                
-            // }
+            claps.play()
         }
       setTimeout(()=>{  e.target.classList.remove('card')
         e.target.classList.add("hidden")
@@ -206,4 +198,3 @@ start.onclick = function(){
         shuffle()
         createBoard()
 }
-
