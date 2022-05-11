@@ -4,9 +4,37 @@ const player1 = document.getElementById('ipt2')
 const start = document.getElementById('btn')
 const names = document.getElementById('names')
 const disapear = document.getElementById('before')
+const audioFiles = [new Audio('A.mp3'),
+                    new Audio('B.mp3'),
+                    new Audio('C.mp3'),
+                    new Audio('D.mp3'),
+                    new Audio('E.mp3'),
+                    new Audio('F.mp3'),
+                    new Audio('G.mp3'),
+                    new Audio('H.mp3'),
+                    new Audio('I.mp3'),
+                    new Audio('J.mp3'),
+                    new Audio('K.mp3'),
+                    new Audio('L.mp3'),
+                    new Audio('M.mp3'),
+                    new Audio('N.mp3'),
+                    new Audio('O.mp3'),
+                    new Audio('P.mp3'),
+                    new Audio('Q.mp3'),
+                    new Audio('R.mp3'),
+                    new Audio('S.mp3'),
+                    new Audio('T.mp3'),
+                    new Audio('U.mp3'),
+                    new Audio('V.mp3'),
+                    new Audio('W.mp3'),
+                    new Audio('X.mp3'),
+                    new Audio('Y.mp3'),
+                    new Audio('Z.mp3'),]
+
 let cnt = 0;
 let cnt2 = 0;
 let temp = [];
+let element;
 let elem;
 let elem1;
 let firstOrSecond = 'f'
@@ -88,12 +116,12 @@ function shuffle(){
 }
 function createBoard (){
     cards.forEach(item =>{
-        let elem = document.createElement('div')
-        elem.innerText = item.card
-        board.appendChild(elem)
-        elem.className = `card ${item.id} hidden img`
-        elem.id = item.id
-        elem.onclick =  click
+        element = document.createElement('div')
+        element.innerText = item.card
+        board.appendChild(element)
+        element.className = `card ${item.id} hidden img`
+        element.id = item.id
+        element.onclick =  click
     })}
 
 
@@ -103,15 +131,29 @@ function click(e){
     temp.push(e.target.id)
     let firstCard = document.getElementsByClassName(temp[0])
     if(temp.length>1){
+    
 
     if(temp[0]==temp[1]){
         if(firstOrSecond == 'f'){
             cnt+=10
             elem.innerText = `${player.value}:${cnt}`
+            // for (i in audioFiles){
+            //     if(audioFiles[i].includes(e.target.innerText)){
+            //         audioFiles[i].play()
+            //     }
+                
+            // }
         }
         else{
             cnt2+=10
             elem1.innerText = `${player1.value}:${cnt2}`
+            audioFiles[1].play()
+            // for (i in audioFiles){
+            //     if(audioFiles[i].includes(e.target.innerText)){
+            //         audioFiles[i].play()
+            //     }
+                
+            // }
         }
       setTimeout(()=>{  e.target.classList.remove('card')
         e.target.classList.add("hidden")
