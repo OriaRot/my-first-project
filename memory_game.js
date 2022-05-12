@@ -186,7 +186,7 @@ function endGame (){
     board.innerHTML = ""
     let winner;
     cnt > cnt2? winner = `The winner is ${elem.innerText} points earned`:winner = `The winner is ${elem1.innerText} points earned`
-    if(cnt+cnt2 == 10){
+    if(cnt+cnt2 == 260){
         let h1 = document.createElement('h1')
         h1.innerText = winner
         board.className = ('winner')
