@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE Memory Game</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Oswald:wght@500&display=swap" rel="stylesheet">
-</head>
-<body>
-   <center> <h1>MEMORY-GAME</h1></center>
-<div id="names"></div>
-<div id="board" class="board"></div>
-<center><div id="before" class="before">
-  <p>player 1 name:</p>
-<input type="text" class="ipt" id = "ipt"> <br>
-<p>player 2 name:</p>
-<input type="text" class="ipt" id = "ipt2"> <br>
-<button class="btn" id="btn">start</button>
-</div></center>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Oswald:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="all">
+      <center><h1>MEMORY-GAME</h1></center>
+      <div id="names"></div>
+      <div id="board" class="board"></div>
+      <center>
+        <div id="before" class="before">
+          <h2>
+            Welcome to the memory game <br />
+            that will teach you English!
+          </h2>
+          <p>player 1 name:</p>
+          <input type="text" class="ipt" id="ipt" /> <br />
+          <p>player 2 name:</p>
+          <input type="text" class="ipt" id="ipt2" /> <br />
+          <button class="btn" id="btn">start</button>
+        </div>
+      </center>
+    </div>
 
-
-  <script src="memory_game.js"></script>
-</body>
+    <script src="memory_game.js"></script>
+  </body>
 </html>

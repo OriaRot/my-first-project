@@ -1,6 +1,11 @@
 body{
     background-color: #143F6B;
     font-family: 'Oswald', sans-serif;
+    -moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
 }
 .board{
     background-color: #143F6B;
@@ -28,8 +33,6 @@ h1{
     width: 75px;
     border: 2px whitesmoke solid;
     border-radius: 10px;
-    /* display: inline-flex; */
-    /* flex: 40px; */
     color: #1500ff;
 }
 .card:hover{
@@ -99,4 +102,9 @@ font-family: 'Work Sans', sans-serif;
 
 .btn:hover{
     box-shadow: 0 10px 10px #26243b;
+}
+.winner{
+    text-align: center;
+    background-color: #F55353;
+    margin-top: 200px;
 }
