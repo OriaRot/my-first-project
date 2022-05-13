@@ -4,7 +4,7 @@ const player1 = document.getElementById("ipt2");
 const start = document.getElementById("btn");
 const names = document.getElementById("names");
 const disapear = document.getElementById("before");
-const all = document.getElementById("all")
+const all = document.getElementById("all");
 const audioFiles = [
   new Audio("A.mp3"),
   new Audio("B.mp3"),
@@ -117,6 +117,7 @@ function shuffle() {
   }
   return cards;
 }
+let check = 0;
 function createBoard() {
   cards.forEach((item) => {
     element = document.createElement("div");
@@ -127,7 +128,6 @@ function createBoard() {
     element.onclick = click;
   });
 }
-
 
 function click(e) {
   e.target.classList.remove("hidden");
@@ -179,36 +179,38 @@ function click(e) {
         }
       }, 1000);
     }
-    endGame()
+    endGame();
   }
 }
-function endGame (){
-    board.innerHTML = ""
-    let winner;
-    cnt > cnt2? winner = `The winner is ${elem.innerText} points earned`:winner = `The winner is ${elem1.innerText} points earned`
-    if(cnt+cnt2 == 260){
-        let h1 = document.createElement('h1')
-        h1.innerText = winner
-        board.className = ('winner')
-        board.appendChild(h1)
-        }}
-    
+function endGame() {
+  let winner;
+  cnt > cnt2
+    ? (winner = `The winner is ${elem.innerText} points earned`)
+    : (winner = `The winner is ${elem1.innerText} points earned`);
+  if (cnt + cnt2 == 260) {
+    board.innerHTML = "";
+    let h1 = document.createElement("h1");
+    h1.innerText = winner;
+    board.className = "winner";
+    board.appendChild(h1);
+  }
+}
 
 function noClick() {}
-start.onclick = startGame 
-start.onmouseover = function(){
-    new Audio('startSound.mp3').play()
+start.onclick = startGame;
+start.onmouseover = function () {
+  new Audio("startSound.mp3").play();
+};
+function startGame() {
+  elem = document.createElement("h4");
+  elem1 = document.createElement("h4");
+  elem.className = "player-name active";
+  elem1.className = "player-name not-active";
+  elem.innerText = `${player.value}:${cnt}`;
+  elem1.innerText = `${player1.value}:${cnt2}`;
+  names.appendChild(elem);
+  names.appendChild(elem1);
+  disapear.className = "go-away";
+  shuffle();
+  createBoard();
 }
-function startGame () {
-    elem = document.createElement("h4");
-    elem1 = document.createElement("h4");
-    elem.className = "player-name active";
-    elem1.className = "player-name not-active";
-    elem.innerText = `${player.value}:${cnt}`;
-    elem1.innerText = `${player1.value}:${cnt2}`;
-    names.appendChild(elem);
-    names.appendChild(elem1);
-    disapear.className = "go-away";
-    shuffle();
-    createBoard();
-  };
