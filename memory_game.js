@@ -199,7 +199,7 @@ function endGame() {
 function noClick() {}
 start.onclick = startGame;
 start.onmouseover = function () {
-  new Audio("startSound.mp3").play();
+  new Audio("start.mp3").play();
 };
 function startGame() {
   elem = document.createElement("h4");
