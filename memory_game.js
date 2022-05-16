@@ -130,56 +130,58 @@ function createBoard() {
 }
 
 function click(e) {
-  e.target.classList.remove("hidden");
-  e.target.onclick = noClick;
-  temp.push(e.target.id);
-  cards.find((item) => item.id == e.target.id).audio.play();
-  let firstCard = document.getElementsByClassName(temp[0]);
-  if (temp.length > 1) {
-    if (temp[0] == temp[1]) {
-      if (firstOrSecond == "f") {
-        cnt += 10;
-        elem.innerText = `${player.value}:${cnt}`;
-        claps.play();
-      } else {
-        cnt2 += 10;
-        elem1.innerText = `${player1.value}:${cnt2}`;
+  if (temp.length < 2) {
+    e.target.classList.remove("hidden");
+    e.target.onclick = noClick;
+    temp.push(e.target.id);
+    cards.find((item) => item.id == e.target.id).audio.play();
+    let firstCard = document.getElementsByClassName(temp[0]);
+    if (temp.length > 1) {
+      if (temp[0] == temp[1]) {
+        if (firstOrSecond == "f") {
+          cnt += 10;
+          elem.innerText = `${player.value}:${cnt}`;
+          claps.play();
+        } else {
+          cnt2 += 10;
+          elem1.innerText = `${player1.value}:${cnt2}`;
 
-        claps.play();
-      }
-      setTimeout(() => {
-        e.target.classList.remove("card");
-        e.target.classList.add("hidden");
-        e.target.classList.remove("img");
-        for (i of firstCard) {
-          i.classList.remove("card");
-          i.classList.add("hidden");
-          i.classList.remove("img");
+          claps.play();
         }
-      }, 1000);
+        setTimeout(() => {
+          e.target.classList.remove("card");
+          e.target.classList.add("hidden");
+          e.target.classList.remove("img");
+          for (i of firstCard) {
+            i.classList.remove("card");
+            i.classList.add("hidden");
+            i.classList.remove("img");
+          }
+        }, 1000);
 
-      temp = [];
-    } else {
-      if (firstOrSecond == "f") {
-        firstOrSecond = "s";
-        elem.classList.replace("active", "not-active");
-        elem1.classList.replace("not-active", "active");
+        temp = [];
       } else {
-        firstOrSecond = "f";
-        elem.classList.replace("not-active", "active");
-        elem1.classList.replace("active", "not-active");
-      }
-      setTimeout(() => {
-        e.target.onclick = click;
-        e.target.classList.add("hidden");
-        for (i of firstCard) {
-          i.onclick = click;
-          i.classList.add("hidden");
-          temp = [];
+        if (firstOrSecond == "f") {
+          firstOrSecond = "s";
+          elem.classList.replace("active", "not-active");
+          elem1.classList.replace("not-active", "active");
+        } else {
+          firstOrSecond = "f";
+          elem.classList.replace("not-active", "active");
+          elem1.classList.replace("active", "not-active");
         }
-      }, 1000);
+        setTimeout(() => {
+          e.target.onclick = click;
+          e.target.classList.add("hidden");
+          for (i of firstCard) {
+            i.onclick = click;
+            i.classList.add("hidden");
+            temp = [];
+          }
+        }, 1000);
+      }
+      endGame();
     }
-    endGame();
   }
 }
 function endGame() {
